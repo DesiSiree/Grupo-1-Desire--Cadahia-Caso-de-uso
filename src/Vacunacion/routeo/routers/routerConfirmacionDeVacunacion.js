@@ -1,5 +1,5 @@
 import express from 'express'
-import CUFactory from '../ModuloMailing/CUFactory.js'
+import CUFactory from '../../negocio/confirmacionDeAplicacionDeDosis/CUFactory.js'
 
 const routerConfirmacionDeVacunacion = express.Router()
 

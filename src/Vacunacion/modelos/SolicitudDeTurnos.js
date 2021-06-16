@@ -85,4 +85,19 @@ function crearSolicitudDeTurno(datos) {
   return solicitud;
 }
 
-export { crearSolicitudDeTurno };
+function actualizarSolicitudDeTurno(turno) {
+  if(turno.estado == "CONFIRMADO_PARA_VACUNARSE") {
+      turno.estado = "VACUNADO_PRIMERA_DOSIS"
+      turno.fecha.setDate(turno.fecha.getDate() + 30);
+
+  } else if (turno.estado == "VACUNADO_PRIMERA_DOSIS"){
+      turno.estado = "VACUNADO_SEGUNDA_DOSIS"
+      turno.fecha = null
+
+  } else {
+    throw new Error("esto no deberia pasar nunca, tiro error")
+  }
+}
+
+export { crearSolicitudDeTurno, 
+        actualizarSolicitudDeTurno };

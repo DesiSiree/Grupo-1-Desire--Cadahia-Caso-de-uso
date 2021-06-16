@@ -1,5 +1,5 @@
 import express from 'express'
-import routerConfirmacionDeVacunacion from './router/routerConfirmacionDeVacunacion.js'
+import routerConfirmacionDeVacunacion from '../../Vacunacion/routeo/routers/routerConfirmacionDeVacunacion.js'
 
 function crearServidor({ port = 0 }) {
 
