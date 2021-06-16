@@ -1,4 +1,4 @@
-function CasoDeUso_EnviarComprobante(pdfConversor, daoSolicitudesDeTurno, builder, sender) {
+function CasoDeUso_ConfirmacionAplicacionDeDosis(pdfConversor, daoSolicitudesDeTurno, builder, sender) {
 
     return {
         ejecutar: async (dni) => {
@@ -8,12 +8,12 @@ function CasoDeUso_EnviarComprobante(pdfConversor, daoSolicitudesDeTurno, builde
             //valido el estado del turno y accionas en base a ese estado
             //actualizo el turno (estado y fecha)
             let nombrepdf;
-            if(turno.estado == "CONFIRMADO") {
-                turno.estado = "COMPLETADOPD"
+            if(turno.estado == "CONFIRMADO_PARA_VACUNARSE") {
+                turno.estado = "VACUNADO_PRIMERA_DOSIS"
                 turno.fecha.setDate(turno.fecha.getDate() + 30);
                 nombrepdf = "Primera Dosis"
-            } else if (turno.estado == "COMPLETADOPD"){
-                turno.estado = "COMPLETADODS"
+            } else if (turno.estado == "VACUNADO_PRIMERA_DOSIS"){
+                turno.estado = "VACUNADO_SEGUNDA_DOSIS"
                 turno.fecha = null
                 nombrepdf = "Segunda Dosis"
             } else {
@@ -28,4 +28,4 @@ function CasoDeUso_EnviarComprobante(pdfConversor, daoSolicitudesDeTurno, builde
         },
     }
 }
-export {CasoDeUso_EnviarComprobante}
+export {CasoDeUso_ConfirmacionAplicacionDeDosis}
