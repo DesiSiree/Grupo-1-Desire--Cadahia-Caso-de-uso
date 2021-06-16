@@ -1,5 +1,5 @@
 import express from 'express'
-import routerEmail from './router/routerEmail.js'
+import routerConfirmacionDeVacunacion from './router/routerConfirmacionDeVacunacion.js'
 
 function crearServidor({ port = 0 }) {
 
@@ -7,7 +7,7 @@ function crearServidor({ port = 0 }) {
 
     app.use(express.json())
 
-    app.use('/api/email', routerEmail);
+    app.use('/api', routerConfirmacionDeVacunacion);
 
     return new Promise((resolve, reject) => {
         const server = app.listen(port)

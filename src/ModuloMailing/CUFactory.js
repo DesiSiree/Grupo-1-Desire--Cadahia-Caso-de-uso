@@ -1,4 +1,4 @@
-import { CasoDeUso_EnviarComprobante } from "./CU_EnviarComprobante.js"
+import { CasoDeUso_ConfirmacionAplicacionDeDosis } from "./CU_ConfirmacionAplicacionDeDosis.js"
 import { crearConversorPdf } from './ConvertirAPDF.js'
 import { crearDaoSolicitudesDeTurno } from '../Dao/daoSolicitudesDeTurno.js'
 import { createEmailBuilder } from "./EmailBuilder.js";
@@ -12,15 +12,15 @@ const daoSolicitudesDeTurno = crearDaoSolicitudesDeTurno();
 const builder = createEmailBuilder(user, pass);
 const sender = createEmailSender(user, pass);
 
-function createCU_EnviarComprobante() {
-    const CU_EnviarComprobante = CasoDeUso_EnviarComprobante(
+function createCU_ConfirmacionAplicacionDeDosis() {
+    const CU_ConfirmacionAplicacionDeDosis = CasoDeUso_ConfirmacionAplicacionDeDosis(
         pdfConversor, 
         daoSolicitudesDeTurno, 
         builder, 
         sender
     );
 
-    return CU_EnviarComprobante;
+    return CU_ConfirmacionAplicacionDeDosis;
 }
 
-export default { createCU_EnviarComprobante }
+export default { createCU_ConfirmacionAplicacionDeDosis }
