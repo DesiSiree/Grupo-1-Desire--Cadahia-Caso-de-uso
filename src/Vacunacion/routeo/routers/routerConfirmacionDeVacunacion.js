@@ -3,7 +3,7 @@ import CUFactory from '../../negocio/confirmacionDeAplicacionDeDosis/CUFactory.j
 
 const routerConfirmacionDeVacunacion = express.Router()
 
-routerConfirmacionDeVacunacion.post('/confirmacion/:id', async (req, res, next) => {
+routerConfirmacionDeVacunacion.post('/solicitudes/:id/aplicaciones', async (req, res, next) => {
   try {
     const CU_ConfirmacionAplicacionDeDosis = CUFactory.createCU_ConfirmacionAplicacionDeDosis();
     await CU_ConfirmacionAplicacionDeDosis.ejecutar(req.params.id);

@@ -1,7 +1,6 @@
-import {actualizarSolicitudDeTurno} from "../../modelos/SolicitudDeTurno.js"
+import { actualizarSolicitudDeTurno } from "../../modelos/SolicitudDeTurnos.js";
 
-
-function CasoDeUso_ConfirmacionAplicacionDeDosis(pdfConversor, daoSolicitudesDeTurno, builder, sender) {
+function crearCasoDeUso_ConfirmacionAplicacionDeDosis(pdfConversor, daoSolicitudesDeTurno, builder, sender) {
 
     return {
         ejecutar: async (dni) => {
@@ -19,4 +18,4 @@ function CasoDeUso_ConfirmacionAplicacionDeDosis(pdfConversor, daoSolicitudesDeT
         },
     }
 }
-export {CasoDeUso_ConfirmacionAplicacionDeDosis}
+export {crearCasoDeUso_ConfirmacionAplicacionDeDosis}
